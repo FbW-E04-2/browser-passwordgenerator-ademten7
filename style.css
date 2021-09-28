@@ -1,0 +1,58 @@
+.form-check {
+    display: flex;
+}
+
+.para {
+    border-radius: 10px;
+    color: honeydew;
+    box-shadow: 12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset, -8px -8px 12px 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+body {
+    background-color: rgb(110, 107, 107);
+}
+
+h1 {
+    color: skyblue;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.btn {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 2em;
+    box-shadow: 12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset, -8px -8px 12px 0 rgba(0, 0, 0, 0.25) inset;
+    animation: button 2s linear infinite both;
+}
+
+@keyframes button {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.input-box {
+    background-color: rgb(110, 107, 107);
+    box-shadow: 12px 12px 16px 0 rgba(255, 255, 255, 0.3), -8px -8px 12px 0 rgba(0, 0, 0, 0.25);
+    border: none;
+    color: skyblue;
+    border-radius: 10px;
+    padding: 15px;
+    border: none;
+}
+
+.generator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    color: skyblue;
+    margin-left: 10px;
+}
