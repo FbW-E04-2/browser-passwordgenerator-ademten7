@@ -132,6 +132,9 @@ showPass.addEventListener("click", (e) => {
         p.innerText = "*".repeat(p.innerText.length);
     }
 });
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 8bc661729df99c77337755e0d3c7e4e82e0adeaf
