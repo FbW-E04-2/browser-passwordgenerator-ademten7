@@ -4,7 +4,7 @@ console.log(charsetArray);
 
 //to show password
 let p = document.createElement("p");
-p.style.cssText = "padding:10px;text-align:center; margin-top:2em;font-size:40px"
+p.style.cssText = "padding:10px;text-align:center; margin-top:1.5em;font-size:25px"
 p.classList.add("para");
 
 //add the password to DOM tree
@@ -120,7 +120,7 @@ input.addEventListener("focusout", () => {
 //to hide  and show the password
 
 showPass.addEventListener("click", (e) => {
-    
+
     // there is a two same click event. 
     //to prevent the bubbling.
     e.stopPropagation()
@@ -132,9 +132,3 @@ showPass.addEventListener("click", (e) => {
         p.innerText = "*".repeat(p.innerText.length);
     }
 });
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 8bc661729df99c77337755e0d3c7e4e82e0adeaf
