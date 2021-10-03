@@ -4,7 +4,7 @@ console.log(charsetArray);
 
 //to show password
 let p = document.createElement("p");
-p.style.cssText = "padding:10px;text-align:center; margin-top:2em;font-size:20px"
+p.style.cssText = "padding:10px;text-align:center; margin-top:2em;font-size:40px"
 p.classList.add("para");
 
 //add the password to DOM tree
@@ -55,6 +55,7 @@ const generatePasswordForUnCheckedBox = () => {
     return str;
 
 }
+let showPass = document.querySelector(".show-password");
 
 
 //generate a default password
@@ -67,23 +68,46 @@ const defaultPassword = () => {
 
 
 p.innerText = defaultPassword();
+//to keep actuall password in temp variable
+let openPass = p.innerText;
+
+
+
+
+
+
 
 let button = document.querySelector(".btn-success");
 let checkBox = document.querySelector(".form-check-input");
 
 button.addEventListener("click", (e) => {
+    if (showPass.checked) {
+        if (checkBox.checked === true) {
+            p.innerText = generatePasswordForCheckedBox();
 
-    if (checkBox.checked === true) {
-        p.innerText = generatePasswordForCheckedBox();
 
+        } else {
+            p.innerText = generatePasswordForUnCheckedBox();
+
+        }
     } else {
-        p.innerText = generatePasswordForUnCheckedBox();
+        if (checkBox.checked === true) {
+            p.innerText = generatePasswordForCheckedBox();
+            p.innerText = "*".repeat(p.innerText.length);
+
+        } else {
+            p.innerText = generatePasswordForUnCheckedBox();
+            p.innerText = "*".repeat(p.innerText.length);
+        }
+
     }
+
+
 
 })
 
 input.addEventListener("focus", () => {
-    input.style.backgroundColor = "yellow"
+    input.style.backgroundColor = "skyblue"
     input.style.color = "black"
 })
 input.addEventListener("focusout", () => {
@@ -91,3 +115,23 @@ input.addEventListener("focusout", () => {
     input.style.color = "skyblue";
 
 })
+
+
+//to hide  and show the password
+
+showPass.addEventListener("click", (e) => {
+    
+    // there is a two same click event. 
+    //to prevent the bubbling.
+    e.stopPropagation()
+    showPass.classList.toggle("show-and-hide");
+    if (showPass.classList.contains("show-and-hide")) {
+        p.innerText = openPass
+    } else {
+        p.innerText = openPass
+        p.innerText = "*".repeat(p.innerText.length);
+    }
+});
+
+
+
